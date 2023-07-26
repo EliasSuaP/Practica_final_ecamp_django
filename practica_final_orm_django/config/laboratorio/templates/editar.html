@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+
+{% block title %}Editar{% endblock %}
+
+{% block content %}
+<div class="text-center mx-auto my-5 rounded p-2" style="background-color: rgb(255, 228, 196); width: 500px;">
+    <h2>Ingresar Laboratorio</h2>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <label class="form-label" for="">Nombre</label>
+        <input type="text" name="nombre" value="{{laboratorio.nombre}}">
+        <br>
+        <label class="form-label" for="">Ciudad</label>
+        <input type="text" name="ciudad" value="{{laboratorio.ciudad}}">
+        <br>
+        <label class="form-label" for="">País</label>
+        <input type="text" name="pais" value="{{laboratorio.pais}}">
+        <br>
+        <button class="btn btn-primary" type="submit">Enviar</button>
+    </form>
+</div>
+<div class="container">
+    <p>¿Información de los Laboratorios?</p>
+    <a href="{% url 'index' %}">Ir a la página de inicio--></a>
+
+</div>
+{% endblock %}
